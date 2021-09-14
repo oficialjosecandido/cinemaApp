@@ -1,0 +1,42 @@
+
+
+
+<div class="row mb-3 ml-2 mr-2" *ngIf="screensList">
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="mt-2 mb-0 text-muted text-xs">
+                    <input type="text" class="form-control" [(ngModel)]="screenName" placeholder="Add Screen Name">
+                    <input type="submit" (click)="createScreen()" value="Create Screen" style="margin-top: 5px;" > 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4" *ngFor="let screen of screensList.content" >
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-uppercase mb-1">Welcome to</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800" *ngIf="screen.name">{{screen.name}}</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800" *ngIf="!screen.name">Secret Screen</div>
+                <div class="mt-2 mb-0 text-muted text-xs">
+                  <span class="text-success mr-2"><i class="fas fa-arrow-right"></i> <a routerLink="screen/{{screen.id}}">Open</a> </span>
+                </div>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-screen fa-2x text-success"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+<app-screen></app-screen>

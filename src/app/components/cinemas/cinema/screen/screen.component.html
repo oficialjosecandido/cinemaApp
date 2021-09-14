@@ -1,0 +1,47 @@
+<div class="row mr-2 ml-2" *ngIf="screenings">
+    <div class="col-lg-12 mb-4">
+      <div class="card">
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+          <h6 class="m-0 font-weight-bold text-primary"> This is the Screenings List</h6>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th>Cinema Name</th>
+                <th>Screen</th>
+                <th>Movie</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of screenings.content" >
+                <td >{{item.cinemaName}}</td>
+                <td>{{item.screenName}}</td>
+                <td>{{item.movie.name}}</td>
+                <td><a href="#" class="btn btn-sm btn-primary">Detail</a></td>
+              </tr>
+              <tr>
+                <td>Create Screening</td>
+                <td><input type="text" class="form-control" [(ngModel)]="screeningName" placeholder="Screening Name"></td>
+                <td></td>
+                <td><input type="submit" (click)="createScreening()" value="Create Screening" ></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer"></div>
+      </div>
+    </div>
+  </div>
+
+
+<!--<h5>Here's the movie List</h5>
+
+<div *ngIf="movies">
+    <ul *ngFor="let movie of movies.content">
+        <li> <a href="">{{movie.name}}</a>  </li>
+    </ul>
+</div>-->
+
+

@@ -1,0 +1,6 @@
+<p>bookings works!</p>
+<div>
+    <ul *ngFor="let booking of bookingsList.content" >
+        <li> <a routerLink="cinema/{{booking.id}}">{{booking.name}} </a></li>
+    </ul>
+</div>

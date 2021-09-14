@@ -1,0 +1,44 @@
+
+<div class="row mb-3 ml-2 mr-2">
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <!--<div class="h5 mb-0 font-weight-bold text-gray-800" >Create Your Cinema</div>-->
+                <div class="mt-2 mb-0 text-muted text-xs">
+                  <!--<span class="text-success mr-2"><i class="fas fa-arrow-up"></i> <a routerLink="cinema/{{cinema.id}}">Open</a> </span>-->
+                    <input type="text" class="form-control" [(ngModel)]="cinemaName" placeholder="Create Cinema Name">
+                    <input type="submit" (click)="addCinema()" value="Create Cinema" style="margin-top: 5px;" > 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4" *ngFor="let cinema of cinemaList.content" >
+        <div class="card h-100">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-uppercase mb-1">Welcome to</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800" *ngIf="cinema.name">{{cinema.name}}</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800" *ngIf="!cinema.name">Secret Cinema</div>
+                <div class="mt-2 mb-0 text-muted text-xs">
+                  <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> <a routerLink="cinema/{{cinema.id}}">Open</a> </span>
+                  <span>Update |</span>
+                  <span> Delete</span>
+                </div>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-users fa-2x text-success"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+
