@@ -58,6 +58,10 @@ export class SharedService {
     return this.http.get<any[]>(this.APIUrl + 'movies/');
   }
 
+  createMovie(val: any) {
+    return this.http.put(this.APIUrl + 'movies/', val);
+  }
+
   // Bookings
 
   getBookingsList():Observable<any[]>{

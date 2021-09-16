@@ -13,6 +13,7 @@ export class MoviesComponent implements OnInit {
   ) { }
   
   moviesList:any=[];
+  movieName: string | undefined;
 
   ngOnInit(): void {
     this.getMovies();
@@ -25,8 +26,16 @@ export class MoviesComponent implements OnInit {
     });
   }
   
-  addMovie() {
-    console.log('fazer isto');
+  createMovie() {
+    var val = {
+      name:this.movieName,
+      runtime: 120
+    };
+    this.service.createMovie(val).subscribe(
+      res=>{
+      alert('Movie Created Successfully'); 
+      window.location.reload();     
+    });
   }
 
 }

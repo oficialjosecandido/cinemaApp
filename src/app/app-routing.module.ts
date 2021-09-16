@@ -6,6 +6,7 @@ import { ScreenComponent } from './components/cinemas/cinema/screen/screen.compo
 import { MoviesComponent } from './components/movies/movies.component';
 import { BookingsComponent } from './components/bookings/bookings.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { BookingComponent } from './components/movies/booking/booking.component';
 
 const routes: Routes = [
   {path: '', component:DashboardComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
     },
   ]
   },
-  {path: 'movies', component:MoviesComponent},  
+  {path: 'movies', component:MoviesComponent},
+  {path: 'movie/:id', component:BookingComponent},      
   {path: 'bookings', component:BookingsComponent},    
 ];
 

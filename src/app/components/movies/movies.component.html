@@ -1,19 +1,19 @@
 
 <div class="row mb-3 ml-2 mr-2" *ngIf="moviesList">
-    <!--<div class="col-xl-3 col-md-6 mb-4">
+    <div class="col-xl-3 col-md-6 mb-4">
         <div class="card h-100">
           <div class="card-body">
             <div class="row no-gutters align-items-center">
               <div class="col mr-2">
                 <div class="mt-2 mb-0 text-muted text-xs">
-                    <input type="text" class="form-control" [(ngModel)]="movieName" placeholder="Create Cinema Name">
-                    <input type="submit" (click)="addMovie()" value="Create Cinema" style="margin-top: 5px;" > 
+                    <input type="text" class="form-control" [(ngModel)]="movieName" placeholder="Movie Name">
+                    <input type="submit" (click)="createMovie()" value="Create Movie" style="margin-top: 5px;" > 
                 </div>
               </div>
             </div>
           </div>
         </div>
-    </div>-->
+    </div>
 
     <div class="col-xl-3 col-md-6 mb-4" *ngFor="let movie of moviesList.content" >
         <div class="card h-100">
@@ -36,5 +36,5 @@
     </div>
 </div>
 
-
+<app-booking></app-booking>
 

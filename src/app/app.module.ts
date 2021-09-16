@@ -10,6 +10,7 @@ import { ScreenComponent } from './components/cinemas/cinema/screen/screen.compo
 import { MoviesComponent } from './components/movies/movies.component';
 import { BookingsComponent } from './components/bookings/bookings.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { BookingComponent } from './components/movies/booking/booking.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     ScreenComponent,
     MoviesComponent,
     BookingsComponent,
-    DashboardComponent
+    DashboardComponent,
+    BookingComponent
   ],
   imports: [
     BrowserModule,
